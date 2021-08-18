@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class ChangeScene : MonoBehaviour
 {
 
-    public void switchToScene(int sceneId) // Switch to scene ID
+    public static void switchToScene(int sceneId) // Switch to scene ID
     {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene(sceneId); // Game start --> switch to forest level scene
     }
 

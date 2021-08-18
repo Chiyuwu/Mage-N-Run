@@ -9,9 +9,10 @@ public class MageKill : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) // If the wall touches the character ...
         {
             CloudOfDarknessInflation.setWallMayMove(); // ... the wall stops moving ...
-
+            ChangeScene.switchToScene(0);   // Go back to Main Menu
             
-            Destroy(collision.gameObject); // ... and the character gets destroyed
+            //collision.gameObject.SetActive(false);
+            //Destroy(collision.gameObject); // ... and the character gets destroyed
         }
     }
 }

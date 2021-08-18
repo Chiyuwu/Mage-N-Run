@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManagement : MonoBehaviour
 {
@@ -16,9 +17,9 @@ public class LevelManagement : MonoBehaviour
 
     float time = 0;
 
-    public static void setCollectableCount()
+    public static void setCollectableCount(int amount)
     {
-        score += 30; // Add 30 points to counter
+        score += amount; // Add 30 points to counter
         setCounter(); //Counter displays updated points
     }
 
@@ -34,6 +35,10 @@ public class LevelManagement : MonoBehaviour
 
     private void Start()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            score = 1000f;
+        }
         timerLabel = timer.GetComponent<Text>(); //Get text
         timerLabel.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds); //Set format for timer
         counterLabel = counter.GetComponent<Text>(); // Get text for counter
