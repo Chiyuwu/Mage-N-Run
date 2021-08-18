@@ -658,6 +658,7 @@ GameObject:
   - component: {fileID: 268980306}
   - component: {fileID: 268980305}
   - component: {fileID: 268980304}
+  - component: {fileID: 268980308}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -746,6 +747,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &268980308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268980303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c9e6d7ffeebf942817e16668b1d877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &283774871
 GameObject:
   m_ObjectHideFlags: 0
@@ -5663,6 +5676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1367478278}
   - component: {fileID: 1367478277}
+  - component: {fileID: 1367478279}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5698,6 +5712,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1367478279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367478276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c9e6d7ffeebf942817e16668b1d877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1387367207
 GameObject:
   m_ObjectHideFlags: 0
@@ -20548,11 +20574,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7026287438561832919, guid: 86107a01a1e48a246ae93374dbe989ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 53.32
+      value: 403.2
       objectReference: {fileID: 0}
     - target: {fileID: 7026287438561832919, guid: 86107a01a1e48a246ae93374dbe989ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.22
+      value: 27.6
       objectReference: {fileID: 0}
     - target: {fileID: 7026287438561832919, guid: 86107a01a1e48a246ae93374dbe989ac, type: 3}
       propertyPath: m_LocalPosition.z
