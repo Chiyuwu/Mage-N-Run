@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManagement : MonoBehaviour
 {
     [SerializeField] GameObject counter;
     [SerializeField] GameObject timer;
-    static int collectableCount = 0; 
+    static float score = 1000; 
     static Text counterLabel;
     static Text timerLabel;
     float seconds = 0; 
@@ -16,24 +17,28 @@ public class LevelManagement : MonoBehaviour
 
     float time = 0;
 
-    public static void setCollectableCount()
+    public static void setCollectableCount(int amount)
     {
-        collectableCount += 30; // Add 30 points to counter
+        score += amount; // Add 30 points to counter
         setCounter(); //Counter displays updated points
     }
 
-    public static int getCollectableCount()
+    public static float getCollectableCount()
     {
-        return collectableCount; // Gets current collectable count
+        return score; // Gets current collectable count
     }
 
     static void setCounter()
     {
-        counterLabel.text = getCollectableCount().ToString(); //Count number into String --> display
+        counterLabel.text = string.Format("{0:0}", getCollectableCount());  //Count number into String --> display
     }
 
     private void Start()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            score = 1000f;
+        }
         timerLabel = timer.GetComponent<Text>(); //Get text
         timerLabel.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds); //Set format for timer
         counterLabel = counter.GetComponent<Text>(); // Get text for counter
@@ -47,5 +52,12 @@ public class LevelManagement : MonoBehaviour
         minutes = Mathf.FloorToInt(time / 60); // Divide by 60
         hours = Mathf.FloorToInt(time / 3600); // Divide by 3600
         timerLabel.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds); // Convert timer numbers into 'special' string
+
+        if(score > 0)
+        {
+            score -= Time.deltaTime;
+        }
+        
+        counterLabel.text = string.Format("{0:0}", getCollectableCount());  //Count number into String --> display
     }
 }
