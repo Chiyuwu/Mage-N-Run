@@ -14,22 +14,34 @@ public class EndLevel : MonoBehaviour
             MageMovement.setMayMageScoot(false);
             CloudOfDarknessInflation.setWallMayMove();
             // stop score + time
-            LevelManagement.setMayCalculate(false);
+            
             // dont destroy on load game manager - check
             // in levelmanagement set everything to 'go' again - check?
             
             /// get player data
             if (SceneManager.GetActiveScene().buildIndex == 2)  // is current scene level 2?
             {
+
+                Debug.Log(SceneManager.GetActiveScene().buildIndex);
+                // LevelManagement.setMayCalculate(false);
                 // get player keyboard name
 
                 // serialize score, name, time
                 // make menu so data gets from save file
+
+                LevelManagement.setScore(1000, 0);
                 ChangeScene.switchToScene(0);
-            } else
+
+            } else if(SceneManager.GetActiveScene().buildIndex == 1)
             {
+                Debug.Log(SceneManager.GetActiveScene().buildIndex);
                 LevelManagement.setMayCalculate(true);
                 ChangeScene.switchToScene(2);
+            }else if(SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                Debug.Log(SceneManager.GetActiveScene().buildIndex);
+
+                LevelManagement.setMayCalculate(true);
             }
 
 
