@@ -8,8 +8,7 @@ public class MageAnimationState : MonoBehaviour
 
     public void startAnimationIsDamaged()
     {
-        MageMovement.setYeetMage(true);
-        Debug.Log("yeet"); // Animation commands the throwback (yeeting)
+        MageMovement.setYeetMage(true);  // Animation commands the throwback (yeeting)
     }
 
     public void endAnimationIsDamaged() 

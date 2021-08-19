@@ -10,7 +10,6 @@ public class MageBadTouch : MonoBehaviour
         {
             if(collision.gameObject.CompareTag("Pain")) // If Mage collides with collider 'Pain' ...
             {
-                Debug.Log("touch touch pain");
                 MageMovement.setMayMageScoot(false); // ... Mage can't move
                 MageMovement.setMayMageBadTouch(false); // ... Mage can't be hurt a second time
                 MageMovement.setAnimIsDamaged(true); // ... Play damage animation 

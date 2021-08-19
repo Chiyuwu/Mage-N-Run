@@ -42,6 +42,11 @@ public class LevelManagement : MonoBehaviour
         mayCalculate = value;
     }
 
+    bool getMayCalculate()
+    {
+        return mayCalculate;
+    }
+
     private void Awake()
     {
         if (instanceRef == null)
@@ -62,7 +67,7 @@ public class LevelManagement : MonoBehaviour
         {
             score = 1000f;
         }
-        if (mayCalculate)
+        if (getMayCalculate())
         {
             timerLabel = timer.GetComponent<Text>(); //Get text
             timerLabel.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds); //Set format for timer
@@ -74,8 +79,9 @@ public class LevelManagement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(mayCalculate)
+        if(getMayCalculate())
         {
+            Debug.Log("calc");
             time += Time.deltaTime; //Add one second per update cycle
             seconds = Mathf.FloorToInt(time % 60); // Divide by 60 and get remains 
             minutes = Mathf.FloorToInt(time / 60); // Divide by 60

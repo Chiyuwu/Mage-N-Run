@@ -7,7 +7,6 @@ public class EndLevel : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name.Equals("CollectableOfAllCollectables")) {
             Debug.Log("end");
 
@@ -29,6 +28,7 @@ public class EndLevel : MonoBehaviour
                 ChangeScene.switchToScene(0);
             } else
             {
+                LevelManagement.setMayCalculate(true);
                 ChangeScene.switchToScene(2);
             }
 
