@@ -4009,6 +4009,7 @@ GameObject:
   - component: {fileID: 484689141}
   - component: {fileID: 484689137}
   - component: {fileID: 484689142}
+  - component: {fileID: 484689143}
   m_Layer: 0
   m_Name: MagePhysics
   m_TagString: Player
@@ -4109,6 +4110,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &484689142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484689135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 767a6d71b144491489de2cd9c3984b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &484689143
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22281,6 +22294,10 @@ PrefabInstance:
     - target: {fileID: 3192470870713250914, guid: 86107a01a1e48a246ae93374dbe989ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -360
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618696676452241367, guid: 86107a01a1e48a246ae93374dbe989ac, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6232107500575944228, guid: 86107a01a1e48a246ae93374dbe989ac, type: 3}
       propertyPath: m_LocalRotation.w
