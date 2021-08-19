@@ -7,7 +7,10 @@ public class EndLevel : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name.Equals("CollectableOfAllCollectables")) {
+            Debug.Log("end");
+
             // stop wall & player movement
             MageMovement.setMayMageScoot(false);
             CloudOfDarknessInflation.setWallMayMove();
@@ -23,6 +26,10 @@ public class EndLevel : MonoBehaviour
 
                 // serialize score, name, time
                 // make menu so data gets from save file
+                ChangeScene.switchToScene(0);
+            } else
+            {
+                ChangeScene.switchToScene(2);
             }
 
 
