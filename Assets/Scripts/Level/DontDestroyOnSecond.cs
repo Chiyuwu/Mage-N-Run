@@ -1,22 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DontDestroyOnSecond : MonoBehaviour
 {
-    [SerializeField] string ObjectName;
+    static DontDestroyOnSecond instanceRef;
 
-    private void Start()
+    private void Awake()
     {
-        //gameObject.transform.root.Find(ObjectName);
-        Debug.Log(gameObject.transform.root.Find(ObjectName).gameObject.name);
-
-        if (SceneManager.GetActiveScene().buildIndex == 0 )//|| gameObject.transform.root.Find(ObjectName))
+        if (instanceRef == null)
         {
-            Destroy(this.gameObject);
+            instanceRef = this;
+            DontDestroyOnLoad(gameObject);
         }
-
-        DontDestroyOnLoad(this.gameObject);
+        else if (instanceRef != this)
+        {
+            Destroy(gameObject);
+        }
     }
 }
