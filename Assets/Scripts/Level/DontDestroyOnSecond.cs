@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 public class DontDestroyOnSecond : MonoBehaviour
 {
     static DontDestroyOnSecond instanceRef;
@@ -9,43 +8,17 @@ public class DontDestroyOnSecond : MonoBehaviour
 
     
     private void Awake()
-    {
-        
-       
-        
-        
-        if (instanceRef == null)
+    {   
+        if (instanceRef == null) 
         {
             instanceRef = this;
             DontDestroyOnLoad(gameObject);
         }
         else if (instanceRef != this)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // If LevelUI is already existing --> destroy copy
         }
 
-
-
-    }
-
-
-
-    private void Start()
-    {
-
-
-        
-
-    
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            Debug.Log("Destroyed");
-            Destroy(gameObject);
-            
-        }
-    
-    
-    
     }
 
 

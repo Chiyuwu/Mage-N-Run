@@ -8,7 +8,7 @@ public class LevelManagement : MonoBehaviour
 {
     static LevelManagement instanceRef;
 
-    [SerializeField] GameObject counter;
+    [SerializeField] GameObject counter; 
     [SerializeField] GameObject timer;
     static float score = 1000; 
     static Text counterLabel;
@@ -19,7 +19,7 @@ public class LevelManagement : MonoBehaviour
 
     static float time = 0;
 
-    static bool mayCalculate = true;
+    static bool mayCalculate = true; //counter and score can count further
 
     public static void setCollectableCount(int amount)
     {
@@ -39,16 +39,16 @@ public class LevelManagement : MonoBehaviour
 
     public static void setMayCalculate(bool value)
     {
-        mayCalculate = value;
+        mayCalculate = value; 
     }
 
     bool getMayCalculate()
     {
-        return mayCalculate;
+        return mayCalculate; //Calculate can .... calculate 
     }
     public static void setScore( float value1, float value2)
     {
-        score = value1;
+        score = value1; 
         time = value2; 
     }
 
@@ -56,7 +56,7 @@ public class LevelManagement : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            setScore(value1, value2);
+            setScore(value1, value2); //Reset score counter ONLY at level1 start
         }
     }
 
@@ -64,21 +64,14 @@ public class LevelManagement : MonoBehaviour
     private void Awake()
     {
 
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            
-            Destroy(gameObject);
-        }
-
-
         if (instanceRef == null)
         {
             instanceRef = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);  //LevelManager is a unique game object
         }
         else if (instanceRef != this)
         {
-            Destroy(gameObject);
+            Destroy(gameObject);//Destroy any copies
         }
 
 
@@ -88,16 +81,14 @@ public class LevelManagement : MonoBehaviour
     private void Start()
     {
         
-        Debug.Log("Destroyed");
-        
         mayCalculate = true;
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             setScore(1000, 0);
             score = 1000f;
             setMayCalculate(true);
-        }
-        if (getMayCalculate())
+        } //Score resets to 1000 at lvl1 start 
+        if (getMayCalculate()) //If counter si allowed to count, then update graphics
         {
             timerLabel = timer.GetComponent<Text>(); //Get text
             timerLabel.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds); //Set format for timer
@@ -111,7 +102,6 @@ public class LevelManagement : MonoBehaviour
     {
         if(getMayCalculate())
         {
-            Debug.Log("calc");
             time += Time.deltaTime; //Add one second per update cycle
             seconds = Mathf.FloorToInt(time % 60); // Divide by 60 and get remains 
             minutes = Mathf.FloorToInt(time / 60); // Divide by 60
@@ -120,7 +110,7 @@ public class LevelManagement : MonoBehaviour
 
             if(score > 0)
             {
-                score -= Time.deltaTime;
+                score -= Time.deltaTime; //no negative count
             }
         
             counterLabel.text = string.Format("{0:0}", getCollectableCount());  //Count number into String --> display

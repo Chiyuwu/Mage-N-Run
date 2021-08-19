@@ -13,11 +13,17 @@ public class CloudOfDarknessInflation : MonoBehaviour
         wallMayMove = false;  //STOP!! You have violated the law!
     }
 
+    
+    public static void setWallMayMoveTrue() // Wall is allowed to move 
+    {
+
+        wallMayMove = true;  //Break out of jail card activated
+    }
 
 
     private void Start()
     {
-        wallMayMove = true;
+        wallMayMove = true; //Wall moves
     }
 
 
