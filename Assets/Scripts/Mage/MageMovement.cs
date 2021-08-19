@@ -103,6 +103,7 @@ public class MageMovement : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = mageGraphics.GetComponent<Animator>(); // take the animator of MageGraphics
+        mayMageScoot = true;
     }
 
     private void Update()
