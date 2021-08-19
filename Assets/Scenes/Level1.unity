@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: 268980304}
   - component: {fileID: 268980308}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: LevelUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -754,11 +754,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268980303}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5c9e6d7ffeebf942817e16668b1d877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectName: LevelUI
 --- !u!1 &283774871
 GameObject:
   m_ObjectHideFlags: 0
@@ -5801,11 +5802,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367478276}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5c9e6d7ffeebf942817e16668b1d877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectName: GameManager
 --- !u!1 &1387367207
 GameObject:
   m_ObjectHideFlags: 0

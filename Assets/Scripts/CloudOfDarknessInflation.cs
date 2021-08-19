@@ -12,6 +12,17 @@ public class CloudOfDarknessInflation : MonoBehaviour
         
         wallMayMove = false;  //STOP!! You have violated the law!
     }
+
+
+
+    private void Start()
+    {
+        wallMayMove = true;
+    }
+
+
+
+
     private void FixedUpdate()
     {
         if (wallMayMove) // If the wall is allowed to move...

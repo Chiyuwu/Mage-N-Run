@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class DontDestroyOnSecond : MonoBehaviour
 {
-    private void Awake()
+    [SerializeField] string ObjectName;
+
+    private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex != 2)
+        //gameObject.transform.root.Find(ObjectName);
+        Debug.Log(gameObject.transform.root.Find(ObjectName).gameObject.name);
+
+        if (SceneManager.GetActiveScene().buildIndex == 0 )//|| gameObject.transform.root.Find(ObjectName))
         {
             Destroy(this.gameObject);
         }
