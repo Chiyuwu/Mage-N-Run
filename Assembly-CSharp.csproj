@@ -66,8 +66,6 @@
     <Compile Include="Assets\Scripts\Level\CollectCollectable.cs" />
     <Compile Include="Assets\Scripts\Level\LevelManagement.cs" />
     <Compile Include="Assets\Scripts\Mage\MageMovement.cs" />
-    <Compile Include="Assets\Scripts\Level\EndLevel.cs" />
-    <Compile Include="Assets\Scripts\Level\DontDestroyOnSecond.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -103,6 +103,7 @@ public class MageMovement : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = mageGraphics.GetComponent<Animator>(); // take the animator of MageGraphics
+        mayMageScoot = true;
     }
 
     private void Update()
@@ -174,8 +175,7 @@ public class MageMovement : MonoBehaviour
             }
             else if (scooty == MageScootDirection.right)
             {
-                rb.velocity = new Vector3(-5, 10f, 0);
-                Debug.Log("right"); // Same as 'left', but for 'right' side
+                rb.velocity = new Vector3(-5, 10f, 0);  // Same as 'left', but for 'right' side
             }
              
         }
