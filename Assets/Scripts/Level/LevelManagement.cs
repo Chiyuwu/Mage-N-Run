@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManagement : MonoBehaviour
 {
+    static LevelManagement instanceRef;
+
     [SerializeField] GameObject counter;
     [SerializeField] GameObject timer;
     static float score = 1000; 
@@ -31,6 +33,19 @@ public class LevelManagement : MonoBehaviour
     static void setCounter()
     {
         counterLabel.text = string.Format("{0:0}", getCollectableCount());  //Count number into String --> display
+    }
+
+    private void Awake()
+    {
+        if (instanceRef == null)
+        {
+            instanceRef = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instanceRef != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
