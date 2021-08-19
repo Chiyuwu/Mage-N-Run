@@ -17,7 +17,7 @@ public class LevelManagement : MonoBehaviour
     float minutes = 0;
     float hours = 0;
 
-    float time = 0;
+    static float time = 0;
 
     static bool mayCalculate = true;
 
@@ -46,9 +46,31 @@ public class LevelManagement : MonoBehaviour
     {
         return mayCalculate;
     }
+    public static void setScore( float value1, float value2)
+    {
+        score = value1;
+        time = value2; 
+    }
+
+    public static void resetScore(float value1, float value2)
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            setScore(value1, value2);
+        }
+    }
+
 
     private void Awake()
     {
+
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            
+            Destroy(gameObject);
+        }
+
+
         if (instanceRef == null)
         {
             instanceRef = this;
@@ -58,14 +80,22 @@ public class LevelManagement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+
+
     }
 
     private void Start()
     {
+        
+        Debug.Log("Destroyed");
+        
         mayCalculate = true;
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
+            setScore(1000, 0);
             score = 1000f;
+            setMayCalculate(true);
         }
         if (getMayCalculate())
         {

@@ -99,12 +99,23 @@ public class MageMovement : MonoBehaviour
     }
     // --------------------------------------------------------------------------
 
+   
+
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = mageGraphics.GetComponent<Animator>(); // take the animator of MageGraphics
         mayMageScoot = true;
     }
+
+    private void Start()
+    {
+
+        LevelManagement.resetScore(1000, 0);
+
+    }
+
+
 
     private void Update()
     {
